@@ -1,0 +1,79 @@
+<diagram program="umletino" version="15.1"><zoom_level>14</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>448</x><y>392</y><w>140</w><h>112</h></coordinates><panel_attributes>Utilisateur
+--
+email
+motdepasse</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>448</x><y>588</y><w>140</w><h>42</h></coordinates><panel_attributes>Administrateur
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>504</x><y>490</y><w>84</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;-
+:Role</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1484</x><y>378</y><w>140</w><h>140</h></coordinates><panel_attributes>Concert
+--
+tarif
+date
+heure
+--
+getPrice()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1918</x><y>392</y><w>140</w><h>70</h></coordinates><panel_attributes>Artiste
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1610</x><y>392</y><w>336</w><h>112</h></coordinates><panel_attributes>lt=&lt;-
+r1=artistes
+m1=1..*
+m2=*
+cbase=d
+représenté par &gt;
+
+</panel_attributes><additional_attributes>220;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1484</x><y>630</y><w>140</w><h>70</h></coordinates><panel_attributes>Salle
+--
+nom</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1456</x><y>504</y><w>154</w><h>154</h></coordinates><panel_attributes>lt=-
+r1=salle
+m1=1
+m2=*
+cbase=l
+localisé v
+
+</panel_attributes><additional_attributes>70;90;70;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1484</x><y>798</y><w>140</w><h>70</h></coordinates><panel_attributes>Place
+--
+numéro</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1456</x><y>686</y><w>168</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1..*
+r2=places
+cbase=l
+contient v
+</panel_attributes><additional_attributes>70;10;70;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1120</x><y>392</y><w>140</w><h>112</h></coordinates><panel_attributes>Billet
+--
+code
+--
+getPrice()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1246</x><y>392</y><w>266</w><h>70</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+concerne &gt;
+</panel_attributes><additional_attributes>170;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1246</x><y>462</y><w>266</w><h>406</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+réserve v
+</panel_attributes><additional_attributes>170;260;80;260;80;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>672</y><w>196</w><h>70</h></coordinates><panel_attributes>/Paiement/
+--
+--
+makePayment(total)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>672</x><y>826</y><w>140</w><h>42</h></coordinates><panel_attributes>PayPal
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>504</x><y>826</y><w>140</w><h>42</h></coordinates><panel_attributes>Carte bancaire
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>728</y><w>126</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>70;10;70;40;10;40;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>644</x><y>728</y><w>126</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;70;40;70;70</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1666</x><y>518</y><w>238</w><h>98</h></coordinates><panel_attributes>bg=yellow
+style=wordwrap
+CI: Les places d'un billets doivent concerner le même concert que celui du billet.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1666</x><y>644</y><w>238</w><h>98</h></coordinates><panel_attributes>bg=yellow
+style=wordwrap
+CI: Pour un même concert, il ne peut pas y avoir deux réservations sur la même place.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>756</x><y>392</y><w>196</w><h>112</h></coordinates><panel_attributes>Commande
+--
+--
+checkoutCommand()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>574</x><y>392</y><w>210</w><h>70</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+effectue &gt;</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>714</x><y>490</y><w>140</w><h>266</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=1
+cbase=l
+payé avec v</panel_attributes><additional_attributes>80;10;80;160;30;160</additional_attributes></element><element><id>Relation</id><coordinates><x>938</x><y>392</y><w>210</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=1..*
+achète &gt;</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>868</x><y>490</y><w>140</w><h>266</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=1
+notifié par v</panel_attributes><additional_attributes>10;10;10;160;60;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>952</x><y>686</y><w>196</w><h>70</h></coordinates><panel_attributes>/Notification/
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>952</x><y>798</y><w>196</w><h>70</h></coordinates><panel_attributes>Mail
+--
+--
+sendValidationMail()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1036</x><y>742</y><w>42</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1050</x><y>532</y><w>238</w><h>126</h></coordinates><panel_attributes>bg=yellow
+style=wordwrap
+CI: La commande, ses billets, et la notification correspondante sont créés seulement si le paiement  est réussi.</panel_attributes><additional_attributes></additional_attributes></element></diagram>

@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Utilisateur
+actor Administrateur
+actor "Serveur d'authentification" as Auth
+actor "Système de la banque" as Payment
+
+rectangle Système {
+    Utilisateur --> (Créer un compte)
+    Utilisateur --> (Se connecter)
+    (Validation 2FA) .> (Se connecter) : extends
+    Utilisateur --> (Consulter la liste des concerts)
+    Utilisateur --> (Commander des billets)
+    (Commander des billets) ..> (Payer les billets) : includes
+    (Payer avec carte) -|> (Payer les billets)
+    (Payer avec PayPal) -|> (Payer les billets)
+    (Envoyer mail de confirmation) ..> (Payer les billets) : extends
+
+    Administrateur --|> Utilisateur
+    Administrateur --> (Gérer les concerts)
+
+    (Créer un compte) -- Auth
+    (Se connecter) -- Auth
+    (Payer les billets) -- Payment
+}
+
+@enduml

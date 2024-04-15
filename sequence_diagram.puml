@@ -1,0 +1,37 @@
+@startuml
+actor ":Utilisateur" as U
+participant ":Commande" as C
+participant ":Billet" as B
+participant ":Concert" as Co
+participant ":Payement" as Pa
+participant ":Mail" as M
+
+U -> C: CheckoutCommand()
+
+loop
+  activate C
+   C -> B: getPrice()
+  activate B
+   B -> Co: getPrice()
+   activate Co
+    return price
+   deactivate Co
+   B --> C: price
+  deactivate B
+  C -> C: total += price
+end
+
+C -> Pa: makePayement(total)
+activate Pa
+ return status
+deactivate Pa
+
+opt status = ACCEPTED
+ C -> M: sendValidationMail()
+ activate M
+  return statusMail
+ deactivate M
+end
+
+deactivate C
+@enduml
